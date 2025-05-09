@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Current Converter</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- partial:index.partial.html -->
+
+    <form autocomplete="off" class="form">
+      <center>
+        <div class="image"><img src=".\m.jpg" alt="Currency" /></div>
+      </center>
+      <h1 style="text-align: center; margin-bottom: 0%; color: black">
+        AUTOMATED CURRENCY CONVERTER SYSTEM
+      </h1>
+      <div class="control">
+        <center>
+          <h2>Welcome Suleiman Sign In...</h2>
+        </center>
+      </div>
+      <div id="error" class="error-message"></div>
+      <br />
+      <div class="control block-cube block-input">
+        <input
+          name="username"
+          id="username"
+          placeholder="Username"
+          type="text"
+        />
+        <div class="bg-top">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg-right">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg">
+          <div class="bg-inner"></div>
+        </div>
+      </div>
+      <div class="control block-cube block-input">
+        <input
+          name="password"
+          id="password"
+          placeholder="Password"
+          type="password"
+        />
+        <div class="bg-top">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg-right">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg">
+          <div class="bg-inner"></div>
+        </div>
+      </div>
+      <button
+        class="btn block-cube block-cube-hover"
+        onclick="login()"
+        type="button"
+      >
+        <div class="bg-top">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg-right">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="text">Log In</div>
+      </button>
+    </form>
+
+    <footer>
+      <p>
+        All right reserved &copy; Automated Currency Converter System ||
+        Suleiman Suleimon Yusuf
+      </p>
+    </footer>
+    <script>
+      function login() {
+        var username = document.getElementById("username").value.trim();
+        var password = document.getElementById("password").value.trim();
+        var errorMessage = document.getElementById("error");
+        if (username === "" || password === "")
+          alert("Input Username and Password");
+        else if (username === "yusuf" && password === "yusuf") {
+          errorMessage.innerHTML = ""; // Clear any previous error message
+          alert("Login successful! "); // You can replace this with your desired action upon successful login
+          window.location.href = "engine/home.html";
+          // Redirect to another page
+          return true; // Allow form submission
+        } else {
+          errorMessage.innerHTML = "Invalid username or password. ";
+          alert("Invalid Authentication");
+          return false; // Prevent form submission
+        }
+      }
+    </script>
+  </body>
+</html>
